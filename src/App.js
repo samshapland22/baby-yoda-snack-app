@@ -5,12 +5,12 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      count: 0,
+      snackCount: 0,
       snackIndex: 0,
       possibleSnacks: [
         "ice spider",
         "small toad",
-        "frog eggs",
+        "alien frog eggs",
         "blue cookie",
         "cup of broth",
       ],
@@ -24,7 +24,7 @@ class App extends React.Component {
       possibleSnacks[snackIndex] === "cup of broth"
     ) {
       this.setState({
-        count: this.state.count + 1,
+        snackCount: this.state.snackCount + 1,
       });
     } else {
       alert("We shouldn't let Grogu eat that... let's find a different snack.");
@@ -42,15 +42,15 @@ class App extends React.Component {
 
   handleReset = () => {
     this.setState({
-      count: 0,
+      snackCount: 0,
       snackIndex: 0,
     });
   };
 
   render() {
-    const { count, snackIndex, possibleSnacks } = this.state;
+    const { snackCount, snackIndex, possibleSnacks } = this.state;
 
-    if (count < 30) {
+    if (snackCount < 30) {
       return (
         <div className="App">
           <h1>Give Baby Yoda some snacks.</h1>
@@ -60,7 +60,8 @@ class App extends React.Component {
           />
           <div className="card">
             <div>
-              Baby Yoda has eaten <span className="count">{count}</span> snacks.
+              Baby Yoda has eaten{" "}
+              <span className="snackCount">{snackCount}</span> snacks.
             </div>
             <button onClick={this.changeSnack}>Change snack</button>
             <button onClick={this.giveSnack}>Give snack</button>

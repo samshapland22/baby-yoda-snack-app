@@ -3,7 +3,7 @@
 }
 
 body {
-  background-image: url("https://i.pinimg.com/originals/0b/d0/bd/0bd0bd3715fe348a330da895e638f0f4.jpg");
+  background-image: url("./background.jpeg");
 }
 
 .App {
@@ -12,9 +12,14 @@ body {
   justify-content: center;
 }
 
-.count {
+.snackCount {
   font-size: 2em;
   margin: 10px;
+  background-color: black;
+  color: limegreen;
+  padding: 3px;
+  font-family: monospace;
+  border-radius: 3px;
 }
 
 .card {
